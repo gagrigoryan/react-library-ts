@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+
+.container {
+    border: none;
+    background-color: $light;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+.containerDark {
+    background-color: $dark;
+    color: $white;
+}
+
+.containerActive {
+    background-color: $active;
+    color: $white;
+}
+
+.containerUppercase {
+    text-transform: uppercase;
+}
