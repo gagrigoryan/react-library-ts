@@ -4,10 +4,12 @@ import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import { terser } from "rollup-plugin-terser";
 import postcss from 'rollup-plugin-postcss';
+import autoprefixer from "autoprefixer"
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import sourceMaps from "rollup-plugin-sourcemaps";
 import del from 'rollup-plugin-delete'
 import eslint from "@rollup/plugin-eslint"
+
 export default [
     {
         input: "src/index.ts",
@@ -31,6 +33,7 @@ export default [
         plugins: [
             del({ targets: 'lib/*' }),
             postcss({
+                plugins: [autoprefixer()],
                 use: ['sass'],
                 modules: true,
                 minimize: true
